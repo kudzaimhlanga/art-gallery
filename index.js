@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(Observer);
 
+
+  //can you detect these changes
+
   function loadExperience() {
     //store art links and populatte floating images
     const artLinksNodes = document.querySelectorAll("[data-art='item']");
@@ -39,9 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const newImage = document.createElement("div");
       newImage.classList.add("fill-container");
-      newImage.innerHTML = artLinks[i].querySelector(
-        "[data-art='link']"
-      ).outerHTML;
+      newImage.innerHTML =
+        artLinks[i].querySelector("[data-art='link']").outerHTML;
       floatingImages[i].appendChild(newImage);
     }
 
@@ -93,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       tolerance: 20,
       wheelSpeed: 0.5,
-      scrollSpeed: 0.5
+      scrollSpeed: 0.5,
     });
 
     //make active
@@ -122,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: Expo.easeInOut,
         onComplete: () => {
           animating = false;
-        }
+        },
       });
     }
 
